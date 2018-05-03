@@ -2,6 +2,7 @@ app.controller('ShoesController',['ShoesService', '$http', function(ShoesService
     console.log('ShoesController has been loaded');
     var self = this;
     self.message = 'Shoes List';
-    // self.shoeItems = ShoesService.shoesArray.shoesCollection;
-    self.shoeItems = ShoesService.shoesArray;
+    self.shoeItems = ShoesService.shoes;
+    self.addShoe = ShoesService.postShoes;
+    self.deleteShoe = ShoesService.delete;
 }])
