@@ -2,11 +2,12 @@ app.service('ShoesService',['$http', function($http) {
     console.log('ShoesService is loaded');
     var self = this;
     self.shoesArray = [
-        {name: 'Red Wing', cost: 100},
-        {name: 'Puma', cost: 50},
-        {name: 'space boots', cost: 150},
-        {name: 'Adidas Superstar', cost: 100}
+        
     ];
+
+    // self.shoesArray = {
+    //     shoesCollection : []
+    // }
 
     self.getShoes = function () {
         $http({
@@ -16,6 +17,8 @@ app.service('ShoesService',['$http', function($http) {
         .then(function(response) {
             self.shoesArray = response.data;
             console.log(response);
+            // self.shoesArray.shoesCollection.splice(0,1);
+            // self.shoesArray.shoesCollection.push(response.data[0]);
         })
         .catch(function(error) {
             console.log('error on /shoes GET', error)
