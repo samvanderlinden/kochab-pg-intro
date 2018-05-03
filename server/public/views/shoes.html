@@ -1,0 +1,27 @@
+<div>
+    <h2>{{vm.message}}</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="items in vm.shoeItems">
+                <td>
+                    <input ng-model="items.name">
+                </td>
+                <td>
+                    <input ng-model="items.cost">
+                </td>
+                <td>
+                    <button ng-click="">Delete</button>
+                </td>
+                <td>
+                    <button ng-click="">Save</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
