@@ -34,7 +34,24 @@ app.service('ShoesService',['$http', function($http) {
         .then(function(response){
             self.getShoes();
         })
-        self.getShoes();
+        .catch(function(error){
+            console.log('error on POST', error)
+        })
     }
+
+    self.deleteShoe = function (shoeToDelete) {
+        $http({
+            method: 'DELETE',
+            url: '/shoes',
+            params: shoeToDelete
+        })
+        .then(function (response) {
+            console.log(response);
+            self.getShoes();
+        })
+        .catch(function(error){
+            console.log('error on DELETE', error)
+        })
+    } 
 
 }])

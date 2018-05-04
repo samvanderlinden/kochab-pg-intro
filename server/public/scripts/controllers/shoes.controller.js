@@ -4,5 +4,5 @@ app.controller('ShoesController',['ShoesService', '$http', function(ShoesService
     self.message = 'Shoes List';
     self.shoeItems = ShoesService.shoes;
     self.addShoe = ShoesService.postShoes;
-    self.deleteShoe = ShoesService.delete;
+    self.deleteShoe = ShoesService.deleteShoe;
 }])

@@ -44,4 +44,21 @@ router.post('/', (req, res) => {
                 });
 })
 
+// DELETE
+router.delete('/', (req, res) => {
+    const shoe = req.query;
+    console.log(shoe);
+    console.log('deleting shoes', shoe.id);
+    pool.query(`DELETE FROM "shoes" 
+                WHERE "id" = ($1);`, [shoe.id])
+                .then((results) => {
+                    res.sendStatus(200);
+                })
+                .catch((error) => {
+                    console.log('error with postgres DELETE', error);
+                    res.sendStatus(500);
+                });
+})
+
+
 module.exports = router;
